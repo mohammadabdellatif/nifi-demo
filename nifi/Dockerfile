@@ -1,3 +1,3 @@
 FROM apache/nifi:latest
 
-#COPY ./nifi-graph-nar-1.13.2.nar /opt/nifi/nifi-current/lib
+COPY ./postgresql-42.2.20.jar /opt/nifi/nifi-current/lib

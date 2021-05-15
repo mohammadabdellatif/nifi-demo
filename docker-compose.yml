@@ -1,0 +1,37 @@
+version: "3.1"
+
+services:
+  nifi:
+    build:
+      context: ./nifi
+      dockerfile: ./Dockerfile
+    image: demo/nifi
+    container_name: demo_nifi
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./volumes/import:/opt/nifi/uploads
+    networks:
+      - localnet
+
+  jupyter:
+    build:
+      context: ./jupyter
+      dockerfile: ./Dockerfile
+    image: demo/jupyter
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./volumes/import:/home/jovyan/work/result
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+      JUPYTER_TOKEN: "demo123"
+    ports:
+      - "8888:8888"
+    container_name: demo_jupyter
+    networks:
+      - localnet
+
+networks:
+  localnet:
+    attachable: true
+

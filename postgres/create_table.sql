@@ -7,6 +7,7 @@ create table people (
 	state varchar(200),
 	zip varchar(10),
 	lng double precision,
-	lat double precision
+	lat double precision,
+	imported bool
 );
 /

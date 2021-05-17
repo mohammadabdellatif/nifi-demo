@@ -30,14 +30,14 @@ docker-compose up -d
 Below table shows the docker containers that should run after executing
 the docker-compose successfully
 
-| container name  | base image                | Dockerfile | Description                                                                                                                                             |
-|-----------------|---------------------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| demo_jupyter    | jupyter /minimal-notebook | [Dockerfile](./jupyter/Dockerfile)           | A notebook to execute python scripts to generate sample CSV file and insert random records to database.  This is the entry point for the demo execution |
-| mongodb         | mongo                     | [Dockerfile](./mongo/Dockerfile)           | A MongoDB server                                                                                                                                        |
-| mongodb_express | mongo-express             | [Dockerfile](./mongo-express/Dockerfile)           | A MongoDB express to browse MongoDB databases and collections                                                                                           |
-| demo_nifi       | apache /nifi:latest       | [Dockerfile](./nifi/Dockerfile)           | An Apache NiFi container to run data pipelines                                                                                                          |
-| demo_pgadmin    | dpage /pgadmin4           | [Dockerfile](./pgadmin/Dockerfile)           | A web browser for postgres database content                                                                                                             |
-| demo_postgres   | postgres                  | [Dockerfile](./postgres/Dockerfile)           | Postgres Database engine, running with username and password "pg" and a database with name demoDB                                                       |
+| container name  | base image                | Dockerfile                               | Description                                                                                                                                             |
+|-----------------|---------------------------|------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| demo_jupyter    | jupyter /minimal-notebook | [Dockerfile](./jupyter/Dockerfile)       | A notebook to execute python scripts to generate sample CSV file and insert random records to database.  This is the entry point for the demo execution |
+| mongodb         | mongo                     | [Dockerfile](./mongo/Dockerfile)         | A MongoDB server                                                                                                                                        |
+| mongodb_express | mongo-express             | [Dockerfile](./mongo-express/Dockerfile) | A MongoDB express to browse MongoDB databases and collections                                                                                           |
+| demo_nifi       | apache /nifi:latest       | [Dockerfile](./nifi/Dockerfile)          | An Apache NiFi container to run data pipelines                                                                                                          |
+| demo_pgadmin    | dpage /pgadmin4           | [Dockerfile](./pgadmin/Dockerfile)       | A web browser for postgres database content                                                                                                             |
+| demo_postgres   | postgres                  | [Dockerfile](./postgres/Dockerfile)      | Postgres Database engine, running with username and password "pg" and a database with name demoDB                                                       |
 
 
 

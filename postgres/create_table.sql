@@ -10,4 +10,3 @@ create table people (
 	lat double precision,
 	imported bool
 );
-/

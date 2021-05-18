@@ -77,6 +77,7 @@ services:
       - "8080:8080"
     volumes:
       - ./volumes/import:/opt/nifi/uploads
+      - ./volumes/json:/opt/nifi/result
     networks:
       - localnet
 
@@ -88,6 +89,7 @@ services:
     volumes:
       - ./notebooks:/home/jovyan/work
       - ./volumes/import:/home/jovyan/work/result
+      - ./volumes/json:/home/jovyan/work/json
     environment:
       JUPYTER_ENABLE_LAB: "yes"
       JUPYTER_TOKEN: "demo123"

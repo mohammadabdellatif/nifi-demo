@@ -39,5 +39,34 @@ the docker-compose successfully
 | demo_pgadmin    | dpage /pgadmin4           | [Dockerfile](./pgadmin/Dockerfile)       | A web browser for postgres database content                                                                                                             |
 | demo_postgres   | postgres                  | [Dockerfile](./postgres/Dockerfile)      | Postgres Database engine, running with username and password "pg" and a database with name demoDB                                                       |
 
+### URLs 
+Once the docker containers are up, you can access the demo components by
+following URLs below:
 
+| URL                                                        | Credentials                              | Description                                                                                     |
+|------------------------------------------------------------|------------------------------------------|-------------------------------------------------------------------------------------------------|
+| [http://localhost:8888](http://localhost:8888)             | access token: demo123                    | Jupyter notebook to use when generating random sample CSV file and entries to Postgres database |
+| [http://localhost:8080/nifi/](http://localhost:8080/nifi/) | Not required                             | NiFi UI to design, run, and monitor data pipelines                                              |
+| [http://localhost:8000/](http://localhost:8000/)           | username: 1234@admin.com, password: 1234 | pgAdmin to browse Postgres database schemas                                                     |
+| [http://localhost:8081/](http://localhost:8081/)           | Not required                             | A mongodb database browser                                                                      |
 
+### Importing NiFi Templates
+To run demo data pipelines, you need to import the template files through NiFi
+interface, open [http://localhost:8080/nifi](http://localhost:8080/nifi) then click
+on upload templates
+
+![Upload Templates](manual/01-upload-template.jpg)
+
+upload template files one by one under folder [nifi-templates](nifi/templates)
+
+### Running CSV to JSON pipeline
+* Through NiFi browser, drag the template icon from top bar to the design area  ![add template](manual/02-add-from-template.jpg)
+* then select convert-csv-to-json ![select template](manual/03-select-csv-to-json-template.jpg)
+* You need to activate the controllers configured in the pipeline by clicking on configuration icon ![Configuration](manual/04-configuration.jpg)
+* Navigate to controller services then enable all services ![Enable services](manual/05-enable-services.jpg)
+* Make sure there are no warnings in pipeline ![warning](manual/06-zero-warnings.jpg)
+* You can start the data pipeline now by clicking on start button
+* This pipeline waits for a CSV file to be generated under specific path, to generate this file, navigate to jupyter notebook [http://localhost:8888](http://localhost:8888) then open python notebook [generate_fake_csv.ipynb](notebooks/generate_fake_csv.ipynb) under work folder ![Open notebook](manual/08-generate-csv-file.jpg)
+* Execute the code inside the notebook
+* Navigate back to NiFi browser, you should see how bytes are read and transferred between the pipeline processors ![running data pipeline](manual/09-running-data-pipeline.jpg)
+  

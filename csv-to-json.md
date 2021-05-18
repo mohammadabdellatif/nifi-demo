@@ -4,7 +4,7 @@
   ![add template](manual/02-add-from-template.jpg)
 * then select convert-csv-to-json 
   
-![add template](manual/03-select-csv-to-json-template.jpg)
+![add template](manual/03-select-csv-to-json-template.jpg | width=200)
 
 * You need to activate the controllers configured in the pipeline by clicking on configuration icon 
 

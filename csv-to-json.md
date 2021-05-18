@@ -2,7 +2,7 @@
 * Through NiFi browser, drag the template icon from top bar to the design area  
   ![add template](manual/02-add-from-template.jpg)
 * then select convert-csv-to-json 
-  ![select template](manual/03-select-csv-to-json-template.jpg)
+  <img src="manual/03-select-csv-to-json-template.jpg" data-canonical-src="manual/03-select-csv-to-json-template.jpg"/>
 * You need to activate the controllers configured in the pipeline by clicking on configuration icon 
   ![Configuration](manual/04-configuration.jpg)
 * Navigate to controller services then enable all services 

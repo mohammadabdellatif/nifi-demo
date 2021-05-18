@@ -57,7 +57,7 @@ on upload templates
 
 ![Upload Templates](manual/01-upload-template.jpg)
 
-upload template files one by one under folder [nifi-templates](nifi/templates)
+upload template files one by one under from [nifi-templates](nifi/templates)
 
 ### Running data pipelines
 To run the data pipeline which converts a CSV file to a JSON file, follow [csv-to-json.md](csv-to-json.md)
